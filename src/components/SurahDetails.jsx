@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
+
 function SurahDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -9,6 +10,8 @@ function SurahDetails() {
   const [name, setName] = useState('');
   const [verseCount, setVerseCount] = useState('');
   const [data, setData] = useState([]);
+
+  console.log(data)
 
   useEffect(() => {
     fetch(`http://localhost:9292/surahs/${id}`)
@@ -58,7 +61,14 @@ function SurahDetails() {
       .catch(error => console.error(`Error updating surah ${id}:`, error));
   };
 
+  function singleDel(value){
+    console.log(value)
+    let newData = data.filter(item=>item!=value)
+    setData(newData)
+  }
+
   const handleDelete = () => {
+    setData([])
     fetch(`http://localhost:9292/surahs/${id}`, {
       method: 'DELETE'
     })
@@ -71,17 +81,17 @@ function SurahDetails() {
   };
 
   return (
-    <div>
+    <div className='surah-details'>
       <h2>{name}</h2>
 
       <form onSubmit={handleSubmit}>
-        <div>
+        <div >
           <label htmlFor="name">Name:</label>
-          <input type="text" id="name" value={name} onChange={handleNameChange} />
+          <input type="name" value={name} onChange={handleNameChange} />
         </div>
         <div>
           <label htmlFor="verseCount">Verse Count:</label>
-          <input type="number" id="verseCount" value={verseCount} onChange={handleVerseCountChange} />
+          <input type="number" value={verseCount} onChange={handleVerseCountChange} />
         </div>
         <button type="submit">Update</button>
       </form>
@@ -90,16 +100,19 @@ function SurahDetails() {
       {data.length > 0 ? (
         <ul>
           {data.map((entry, index) => (
-            <li key={index}>
-              Name: {entry[0]}, Verse: {entry[1]}
-            </li>
+            <>
+              <li key={index}>
+                Name: {entry[0]}, Verse: {entry[1]}
+                <button key={index} onClick={()=>singleDel(entry)}>Delete</button>
+              </li>
+            </>
           ))}
         </ul>
       ) : (
         <p>No additional details yet.</p>
       )}
 
-      <button onClick={handleDelete}>Delete</button>
+      <button onClick={handleDelete}>Delete all</button>
     </div>
   );
 }

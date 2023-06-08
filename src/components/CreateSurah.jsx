@@ -1,10 +1,9 @@
-import { useState } from 'react';
-
+import React, { useState } from 'react';
 
 function CreateSurah() {
   const [name, setName] = useState('');
   const [verseCount, setVerseCount] = useState('');
-  const history = useHistory();
+  const [data, setData] = useState([]);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -16,6 +15,11 @@ function CreateSurah() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    const nameInput = event.target[0].value;
+    const verseInput = event.target[1].value;
+
+    setData([...data, [nameInput, verseInput]]);
 
     const newSurah = {
       name: name,
@@ -32,29 +36,45 @@ function CreateSurah() {
       .then(response => response.json())
       .then(data => {
         console.log('New surah created:', data);
-        // Reset the form fields
         setName('');
         setVerseCount('');
-        // Redirect to the surah list page
-        history.push('/surahs');
       })
       .catch(error => console.error('Error creating surah:', error));
   };
 
+  const singleDel = (value) => {
+    const newData = data.filter(item => item !== value);
+    setData(newData);
+  };
+
   return (
-    <div>
+    <div className='create-surah'>
       <h2>Create Surah</h2>
-      <form onSubmit={handleSubmit}>
+      <form className='form' onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
-          <input type="text" id="name" value={name} onChange={handleNameChange} />
+          <input type="name" value={name} onChange={handleNameChange} />
         </div>
         <div>
           <label htmlFor="verseCount">Verse Count:</label>
-          <input type="number" id="verseCount" value={verseCount} onChange={handleVerseCountChange} />
+          <input type="number" value={verseCount} onChange={handleVerseCountChange} />
         </div>
         <button type="submit">Create</button>
       </form>
+
+      <h3>Additional Surah created:</h3>
+      {data.length > 0 ? (
+        <ul className='surahs-card-create'>
+          {data.map((entry, index) => (
+            <li  key={index}>
+              Name: {entry[0]}, Verse: {entry[1]}
+              <button key={index} onClick={() => singleDel(entry)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p >No additional details yet.</p>
+      )}
     </div>
   );
 }

@@ -20,14 +20,14 @@ function Home() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="topnav">
       <nav className="navbar">
         <Link to="/">Home</Link>
-        <Link to="/surahs">surahs</Link>
+        <Link to="/surahs">SurahList</Link>
         <Link to="/surahs/create">Create surah</Link>
         <Link to="/surahs/details">Surah Details</Link>
       </nav>
-      <h2 className="title-h2">Quranic Verses App</h2>
+      <h2 className="title-h2">QURANIC VERSES APP</h2>
       <h3>Discover the Beauty of the Quran</h3>
 
       <button className="button">Get Started</button>
@@ -37,7 +37,7 @@ function Home() {
 
       <h4 className="benefits">Benefits of Quranic Verses App:</h4>
       <div className="benefits">
-        <ul >
+        <ul className="benefits">
           <li>Explore and contemplate on Quranic verses</li>
           <li>Create your own collection of favorite verses</li>
           <li>Access translations and interpretations</li>

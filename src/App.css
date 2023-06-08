@@ -1,13 +1,29 @@
-/* index.css */
 
-/* Add your custom styles here */
 
-.container {
+.topnav {
   font-family: Arial, sans-serif;
   text-align: center;
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+ul {
+  line-height: 1.5em;
+  margin: 5px 0 15px;
+  padding: 0;
+}
+
+li.checkmark::before {
+  content: ""; 
+  position: absolute; 
+  left: 2px; 
+  top: 5px; 
+  width: 3px;
+  height: 6px;
+  border: solid #f9dd94;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 .navbar {
@@ -19,13 +35,13 @@
 
 .title-h2 {
   margin-top: 30px;
-  color: #333;
+  color: #130303eb;
 }
 
 .button {
   margin: 10px;
-  background-color: #4caf50;
-  color: white;
+  background-color: #14ddeb;
+  color: rgb(34, 5, 5);
   border: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -36,11 +52,11 @@
   max-width: 500px;
   display: block;
   margin: auto;
-  border: 2px solid #ccc;
+  border: 2px solid #0c1818;
   border-radius: 5px;
 }
 
-.form {
+/* .form {
   text-align: left;
   margin-top: 20px;
 }
@@ -89,3 +105,32 @@
   padding: 10px 20px;
   cursor: pointer;
 }
+ 
+
+/* surah list */
+/* .surah-list {
+  list-style: none;
+  padding: 0;
+}
+
+.surah-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #d92e2e;
+}
+
+.surah-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.delete-button {
+  background-color: #ff5555;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+} */ */
