@@ -1,0 +1,91 @@
+/* index.css */
+
+/* Add your custom styles here */
+
+.container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.navbar {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.title-h2 {
+  margin-top: 30px;
+  color: #333;
+}
+
+.button {
+  margin: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.firstphoto {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: auto;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.form {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form input[type="text"],
+.form input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form button[type="submit"] {
+  background-color: gray;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.additional-details {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.additional-details ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.additional-details li {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
