@@ -38,6 +38,6 @@ The Quran App is hosted on GitHub Pages. You can access the live site by visitin
 
 The Quran App is licensed under the [MIT License](LICENSE). See the [LICENSE](LICENSE) file for more details.
 
-© [Year] [Your Name]
+© [2023] [Mohamed.A.Salad]
 
 Feel free to customize the content and formatting of the `README.md` file to best suit your project's needs.
