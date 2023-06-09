@@ -10,8 +10,10 @@
 
 ## Author
 
-Author: Your Name
-Contact: Your Email
+Author: Mohamed.A.Salad
+Contact: mohasalanka@gmail.com
+For more look at : https://github.com/mohasalanka/QURAAN_APP
+
 
 ## Description
 
@@ -35,3 +37,7 @@ The Quran App is hosted on GitHub Pages. You can access the live site by visitin
 ## License
 
 The Quran App is licensed under the [MIT License](LICENSE). See the [LICENSE](LICENSE) file for more details.
+
+© [Year] [Your Name]
+
+Feel free to customize the content and formatting of the `README.md` file to best suit your project's needs.
